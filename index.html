@@ -13,6 +13,7 @@
       <a href="#Add_React_to_a_Website">Add React to a Website</a>
       <a href="#Hello_World">Hello World</a>
       <a href="#Rendering_Elements">Rendering Elements</a>
+      <a href="#Components">Components</a>
     </nav>
       <section class="main-section" id="Getting_Started">
         <header>Getting Started</header>
@@ -47,7 +48,8 @@
           <h3>Step 1: Add a DOM Container to the HTML</h3>
           <p>First, open the HTML page you want to edit. Add an empty <div> tag to mark the spot where you want to display something with React. For example:
           </p>
-          <code><!-- ... existing HTML ... -->
+          <code>
+            <!-- ... existing HTML ... -->
 
             <div id="like_button_container"></div>
             
@@ -57,7 +59,8 @@
           </p>
           <h3>Step 2: Add the Script Tags</h3>
           <p>Next, add three script tags to the HTML page right before the closing /body tag:</p>
-          <code>  <!-- ... other HTML ... -->
+          <code>
+              <!-- ... other HTML ... -->
 
             <!-- Load React. -->
             <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
@@ -67,14 +70,16 @@
             <!-- Load our React component. -->
             <script src="like_button.js"></script>
           
-          </body></code>
+          </body>
+        </code>
           <p>The first two tags load React. The third one will load your component code.
           </p>
           <h3>Step 3: Create a React Component</h3>
           <p>Create a file called like_button.js next to your HTML page.
             After the starter code, add three lines to the bottom of like_button.js:
           </p>
-          <code>// ... the starter code you pasted ...
+          <code>
+            // ... the starter code you pasted ...
             const domContainer = document.querySelector('#like_button_container');
             const root = ReactDOM.createRoot(domContainer);
             root.render(e(LikeButton));
@@ -84,7 +89,8 @@
       <section class="main-section" id="Hello_World">
         <header>Hello World</header>
         <p>The smallest React example looks like this:</p>
-        <code>const root = ReactDOM.createRoot(document.getElementById('root'));
+        <code>
+          const root = ReactDOM.createRoot(document.getElementById('root'));
           root.render(<h1>Hello, world!</h1>);
         </code>
         <p>It displays a heading saying “Hello, world!” on the page.</p>
@@ -94,22 +100,54 @@
         <p>Elements are the smallest building blocks of React apps.
 
           An element describes what you want to see on the screen:</p>
-          <code>const element = <h1>Hello, world</h1>;</code>
+          <code>
+            const element = <h1>Hello, world</h1>;
+          </code>
           <p>Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.</p>
           <header>Rendering an Element into the DOM</header>
           <p>Let’s say there is a <div> somewhere in your HTML file:</p>
-            <code><div id="root"></div></code>
+            <code>
+              <div id="root"></div>
+            </code>
             <p>We call this a “root” DOM node because everything inside it will be managed by React DOM.
 
               Applications built with just React usually have a single root DOM node. If you are integrating React into an existing app, you may have as many isolated root DOM nodes as you like.
               
               To render a React element, first pass the DOM element to ReactDOM.createRoot(), then pass the React element to root.render():</p>
-              <code>const root = ReactDOM.createRoot(
+              <code>
+                const root = ReactDOM.createRoot(
                 document.getElementById('root')
               );
               const element = <h1>Hello, world</h1>;
-              root.render(element);</code>
+              root.render(element);
+            </code>
               <p>It displays “Hello, world” on the page.</p>
+      </section>
+      <section class="main-section" id="Components">
+        <header>Components</header>
+        <p>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a detailed component API reference here.
+
+          Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+        </p>
+        <header>Function and Class Components</header>
+        <p>The simplest way to define a component is to write a JavaScript function:</p>
+        <code>
+          function Welcome(props) {
+          return <h1>Hello, {props.name}</h1>;
+         }
+        </code>
+        <p>This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.
+        </p>
+        <p>You can also use an ES6 class to define a component:</p>
+        <code>
+          class Welcome extends React.Component {
+          render() {
+            return <h1>Hello, {this.props.name}</h1>;
+          }
+         }
+        </code>
+        pThe above two components are equivalent from React’s point of view.
+        Function and Class components both have some additional features that we will discuss in the next sections.
       </section>
   </main>
 </body>
