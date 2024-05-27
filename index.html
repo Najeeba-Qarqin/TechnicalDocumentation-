@@ -14,6 +14,8 @@
       <a href="#Hello_World">Hello World</a>
       <a href="#Rendering_Elements">Rendering Elements</a>
       <a href="#Components">Components</a>
+      <a href="#Handling_Events">Handling Events</a>
+      <a href="#Conditional_Rendering">Conditional Rendering</a>
     </nav>
       <section class="main-section" id="Getting_Started">
         <header>Getting Started</header>
@@ -175,6 +177,53 @@
         In both cases, the e argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with bind any further arguments are automatically forwarded.
       </p>
       </section>
+      <section class="main-section" id="Conditional_Rendering">
+      <header>Conditional Rendering</header>
+      <p>n React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.</p>
+      <p>Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.</p>
+      <p>Consider these two components:</p>
+      <code>function UserGreeting(props) {
+        return <h1>Welcome back!</h1>;
+      }
+      
+      function GuestGreeting(props) {
+        return <h1>Please sign up.</h1>;
+      }</code>
+      <p>We’ll create a Greeting component that displays either of these components depending on whether a user is logged in:</p>
+      <code>function Greeting(props) {
+        const isLoggedIn = props.isLoggedIn;
+        if (isLoggedIn) {
+          return <UserGreeting />;
+        }
+        return <GuestGreeting />;
+      }
+      
+      const root = ReactDOM.createRoot(document.getElementById('root')); 
+      // Try changing to isLoggedIn={true}:
+      root.render(<Greeting isLoggedIn={false} />);</code>
+      <p>This example renders a different greeting depending on the value of isLoggedIn prop.
+      </p>
+      <header>Element Variables</header>
+      <p>You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn’t change.</p>
+      <p>Consider these two new components representing Logout and Login buttons:</p>
+      <code>
+        function LoginButton(props) {
+          return (
+            <button onClick={props.onClick}>
+              Login
+            </button>
+          );
+        }
+        
+        function LogoutButton(props) {
+          return (
+            <button onClick={props.onClick}>
+              Logout
+            </button>
+          );
+        }
+      </code>
+    </section>
   </main>
 </body>
 </html>
