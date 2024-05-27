@@ -149,6 +149,32 @@
         pThe above two components are equivalent from React’s point of view.
         Function and Class components both have some additional features that we will discuss in the next sections.
       </section>
+      <section class="main-section" id="Handling_Events">
+        <header>Handling EventsHandling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:</header>
+          <li>React events are named using camelCase, rather than lowercase.</li>
+          <li>With JSX you pass a function as the event handler, rather than a string.</li>
+        <p>For example, the HTML:</p>
+        <code>
+          <button onclick="activateLasers()">
+          Activate Lasers
+        </button>
+      </code>
+      <p>is slightly different in React:</p>
+      <code>
+        <button onClick={activateLasers}>
+        Activate Lasers
+      </button>
+      </code>
+      <header>Passing Arguments to Event Handlers</header>
+      <p>Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if id is the row ID, either of the following would work:</p>
+      <code>
+        <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+        <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+      </code>
+      <p>The above two lines are equivalent, and use arrow functions and Function.prototype.bind respectively.
+        In both cases, the e argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with bind any further arguments are automatically forwarded.
+      </p>
+      </section>
   </main>
 </body>
 </html>
