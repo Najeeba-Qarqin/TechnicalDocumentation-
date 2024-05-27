@@ -10,6 +10,7 @@
     <nav id="navbar">
       <header>React</header>
       <a href="#Getting_Started">Getting Started</a>
+      <a href="#Add_React_to_a_Website">Add React to a Website</a>
     </nav>
       <section class="main-section" id="Getting_Started">
         <header>Getting Started</header>
@@ -31,6 +32,52 @@
         <h2>Versioned Documentation</h2>
         <p>This documentation always reflects the latest stable version of React. Since React 16, you can find older versions of the documentation on a separate page. Note that documentation for past versions is snapshotted at the time of the release, and isn’t being continuously updated.
         </p>
+      </section>
+      <section class="main-section" id="Add_React_to_a_Website">
+        <header>Add React to a Website</header>
+        <p>Use as little or as much React as you need.
+          React has been designed from the start for gradual adoption, and you can use as little or as much React as you need. Perhaps you only want to add some “sprinkles of interactivity” to an existing page. React components are a great way to do that.
+          The majority of websites aren’t, and don’t need to be, single-page apps. With a few lines of code and no build tooling, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
+          </p>
+          <h2>Add React in One Minute</h2>
+          <p>In this section, we will show how to add a React component to an existing HTML page. You can follow along with your own website, or create an empty HTML file to practice.
+          </p>
+          <h3>Step 1: Add a DOM Container to the HTML</h3>
+          <p>First, open the HTML page you want to edit. Add an empty <div> tag to mark the spot where you want to display something with React. For example:
+          </p>
+          <code><!-- ... existing HTML ... -->
+
+            <div id="like_button_container"></div>
+            
+            <!-- ... existing HTML ... -->
+          </code>
+          <p>We gave this <div> a unique id HTML attribute. This will allow us to find it from the JavaScript code later and display a React component inside of it.
+          </p>
+          <h3>Step 2: Add the Script Tags</h3>
+          <p>Next, add three script tags to the HTML page right before the closing /body tag:</p>
+          <code>  <!-- ... other HTML ... -->
+
+            <!-- Load React. -->
+            <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+            <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+            <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+          
+            <!-- Load our React component. -->
+            <script src="like_button.js"></script>
+          
+          </body></code>
+          <p>The first two tags load React. The third one will load your component code.
+          </p>
+          <h3>Step 3: Create a React Component</h3>
+          <p>Create a file called like_button.js next to your HTML page.
+            After the starter code, add three lines to the bottom of like_button.js:
+          </p>
+          <code>// ... the starter code you pasted ...
+            const domContainer = document.querySelector('#like_button_container');
+            const root = ReactDOM.createRoot(domContainer);
+            root.render(e(LikeButton));
+          </code>
+          <p> These three lines of code find the <div> we added to our HTML in the first step, create a React app with it, and then display our “Like” button React component inside of it.</p>
       </section>
   </main>
 </body>
