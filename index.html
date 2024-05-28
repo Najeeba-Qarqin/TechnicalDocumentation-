@@ -9,37 +9,37 @@
   <main id="main-doc">
     <nav id="navbar">
       <header>React</header>
-      <a href="#Getting_Started">Getting Started</a>
-      <a href="#Add_React_to_a_Website">Add React to a Website</a>
-      <a href="#Hello_World">Hello World</a>
-      <a href="#Rendering_Elements">Rendering Elements</a>
-      <a href="#Components">Components</a>
-      <a href="#Handling_Events">Handling Events</a>
-      <a href="#Conditional_Rendering">Conditional Rendering</a>
+      <li><a class="nav-link" href="#Getting_Started">Getting Started</a></li>
+      <li><a class="nav-link" href="#Add_React_to_a_Website">Add React to a Website</a></li>
+      <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+      <li><a class="nav-link" href="#Rendering_Elements">Rendering Elements</a></li>
+      <li><a class="nav-link" href="#Components">Components</a></li>
+      <li><a class="nav-link" href="#Handling_Events">Handling Events</a></li>
+      <li><a class="nav-link" href="#Conditional_Rendering">Conditional Rendering</a></li>
     </nav>
       <section class="main-section" id="Getting_Started">
-        <header>Getting Started</header>
+        <header><h1>Getting Started</h1></header>
         <p>React is a JavaScript library for building user interfaces.</p>
-        <h2>Try React</h2>
+        <li><h2>Try React</h2></li>
         <p>React has been designed from the start for gradual adoption, and you can use as little or as much React as you need. Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started.
         </p>
-        <h2>Learn React</h2>
+        <li><h2>Learn React</h2></li>
         <p>People come to React from different backgrounds and with different learning styles. Whether you prefer a more theoretical or a practical approach, we hope you’ll find this section helpful
           If you prefer to learn by doing, start with our practical tutorial.
           If you prefer to learn concepts step by step, start with our guide to main concepts.
           Like any unfamiliar technology, React does have a learning curve. With practice and some patience, you will get the hang of it.
         </p>
-        <h2>Staying Informed</h2>
+      </li><h2>Staying Informed</h2></li>
         <p>The React blog is the official source for the updates from the React team. Anything important, including release notes or deprecation notices, will be posted there first.
           You can also follow the @reactjs account on Twitter, but you won’t miss anything essential if you only read the blog.
           Not every React release deserves its own blog post, but you can find a detailed changelog for every release in the CHANGELOG.md file in the React repository, as well as on the Releases page.
         </p>
-        <h2>Versioned Documentation</h2>
+      <li><h2>Versioned Documentation</h2></li>
         <p>This documentation always reflects the latest stable version of React. Since React 16, you can find older versions of the documentation on a separate page. Note that documentation for past versions is snapshotted at the time of the release, and isn’t being continuously updated.
         </p>
       </section>
       <section class="main-section" id="Add_React_to_a_Website">
-        <header>Add React to a Website</header>
+        <header><h1>React to a Website</h1></header>
         <p>Use as little or as much React as you need.
           React has been designed from the start for gradual adoption, and you can use as little or as much React as you need. Perhaps you only want to add some “sprinkles of interactivity” to an existing page. React components are a great way to do that.
           The majority of websites aren’t, and don’t need to be, single-page apps. With a few lines of code and no build tooling, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
@@ -89,7 +89,7 @@
           <p> These three lines of code find the <div> we added to our HTML in the first step, create a React app with it, and then display our “Like” button React component inside of it.</p>
       </section>
       <section class="main-section" id="Hello_World">
-        <header>Hello World</header>
+        <header><h1>Hello World</h1></header>
         <p>The smallest React example looks like this:</p>
         <code>
           const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -98,7 +98,7 @@
         <p>It displays a heading saying “Hello, world!” on the page.</p>
       </section>
       <section class="main-section" id="Rendering_Elements">
-        <header>Rendering Elements</header>
+        <header><h1>Rendering Elements</h1></header>
         <p>Elements are the smallest building blocks of React apps.
 
           An element describes what you want to see on the screen:</p>
@@ -126,7 +126,7 @@
               <p>It displays “Hello, world” on the page.</p>
       </section>
       <section class="main-section" id="Components">
-        <header>Components</header>
+        <header><h1>Components</h1></header>
         <p>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a detailed component API reference here.
 
           Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
@@ -152,7 +152,8 @@
         Function and Class components both have some additional features that we will discuss in the next sections.
       </section>
       <section class="main-section" id="Handling_Events">
-        <header>Handling EventsHandling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:</header>
+        <header><h1>Handling Events</h1></header>
+        <p>Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:</p>
           <li>React events are named using camelCase, rather than lowercase.</li>
           <li>With JSX you pass a function as the event handler, rather than a string.</li>
         <p>For example, the HTML:</p>
@@ -170,15 +171,15 @@
       <header>Passing Arguments to Event Handlers</header>
       <p>Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if id is the row ID, either of the following would work:</p>
       <code>
-        <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
-        <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+        <!-- <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+        <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button> -->
       </code>
       <p>The above two lines are equivalent, and use arrow functions and Function.prototype.bind respectively.
         In both cases, the e argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with bind any further arguments are automatically forwarded.
       </p>
       </section>
       <section class="main-section" id="Conditional_Rendering">
-      <header>Conditional Rendering</header>
+      <header><h1>Conditional Rendering</h1></header>
       <p>n React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.</p>
       <p>Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.</p>
       <p>Consider these two components:</p>
