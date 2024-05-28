@@ -18,6 +18,7 @@
       <li><a class="nav-link" href="#Handling_Events">Handling Events</a></li>
       <li><a class="nav-link" href="#Conditional_Rendering">Conditional Rendering</a></li>
     </nav>
+    <div>
       <section class="main-section" id="Getting_Started">
         <header><h1>Getting Started</h1></header>
         <p>React is a JavaScript library for building user interfaces.</p>
@@ -43,112 +44,121 @@
         <header><h1>React to a Website</h1></header>
         <p>Use as little or as much React as you need.
           React has been designed from the start for gradual adoption, and you can use as little or as much React as you need. Perhaps you only want to add some “sprinkles of interactivity” to an existing page. React components are a great way to do that.
-          The majority of websites aren’t, and don’t need to be, single-page apps. With a few lines of code and no build tooling, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
+          The majority of websites aren't, and don't need to be, single-page apps. With a few lines of code and no build tooling, try React in a small part of your website. You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
           </p>
           <h2>Add React in One Minute</h2>
           <p>In this section, we will show how to add a React component to an existing HTML page. You can follow along with your own website, or create an empty HTML file to practice.
           </p>
           <h3>Step 1: Add a DOM Container to the HTML</h3>
-          <p>First, open the HTML page you want to edit. Add an empty <div> tag to mark the spot where you want to display something with React. For example:
+          <p>First, open the HTML page you want to edit. Add an empty div tag to mark the spot where you want to display something with React. For example:
           </p>
+          <div>
           <code>
-            <!-- ... existing HTML ... -->
+            !-- ... existing HTML ... --
 
-            <div id="like_button_container"></div>
+            div id="like_button_container"  div
             
-            <!-- ... existing HTML ... -->
+            !-- ... existing HTML ... --
           </code>
-          <p>We gave this <div> a unique id HTML attribute. This will allow us to find it from the JavaScript code later and display a React component inside of it.
-          </p>
+        </div>
+          <p>We gave this div a unique id HTML attribute. This will allow us to find it from the JavaScript code later and display a React component inside of it.</p>
           <h3>Step 2: Add the Script Tags</h3>
           <p>Next, add three script tags to the HTML page right before the closing /body tag:</p>
+          <div>
           <code>
-              <!-- ... other HTML ... -->
-
-            <!-- Load React. -->
-            <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-            <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-            <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-          
-            <!-- Load our React component. -->
-            <script src="like_button.js"></script>
-          
-          </body>
+            -- ... other HTML ... --
+            -- Load React. --
+            -- Note: when deploying, replace "development.js" with "production.min.js". --
+            script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin /script
+            script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin /script
+            -- Load our React component. --
+            script src="like_button.js" /script
+          /body
         </code>
+          </div>
           <p>The first two tags load React. The third one will load your component code.
           </p>
           <h3>Step 3: Create a React Component</h3>
           <p>Create a file called like_button.js next to your HTML page.
             After the starter code, add three lines to the bottom of like_button.js:
           </p>
+          <div>
           <code>
             // ... the starter code you pasted ...
             const domContainer = document.querySelector('#like_button_container');
             const root = ReactDOM.createRoot(domContainer);
             root.render(e(LikeButton));
           </code>
+          </div>
           <p> These three lines of code find the div we added to our HTML in the first step, create a React app with it, and then display our “Like” button React component inside of it.</p>
       </section>
       <section class="main-section" id="Hello_World">
         <header><h1>Hello World</h1></header>
         <p>The smallest React example looks like this:</p>
+        <div>
         <code>
           const root = ReactDOM.createRoot(document.getElementById('root'));
           root.render( h1 Hello, world! h1);
         </code>
+        </div>
         <p>It displays a heading saying “Hello, world!” on the page.</p>
       </section>
       <section class="main-section" id="Rendering_Elements">
         <header><h1>Rendering Elements</h1></header>
-        <p>Elements are the smallest building blocks of React apps.
-
-          An element describes what you want to see on the screen:</p>
-          <code>
-            const element = <h1>Hello, world</h1>;
+        <p>Elements are the smallest building blocks of React appsAn element describes what you want to see on the screen:</p>
+        <div>  
+        <code>
+            const element = h1 Hello, world /h1;
           </code>
+        </div>
           <p>Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.</p>
           <header>Rendering an Element into the DOM</header>
-          <p>Let’s say there is a <div> somewhere in your HTML file:</p>
+          <p>Let's say there is a div somewhere in your HTML file:</p>
+          <div>
             <code>
-              <div id="root"></div>
+              div id="root" /div
             </code>
+          </div>
             <p>We call this a “root” DOM node because everything inside it will be managed by React DOM.
-
               Applications built with just React usually have a single root DOM node. If you are integrating React into an existing app, you may have as many isolated root DOM nodes as you like.
-              
               To render a React element, first pass the DOM element to ReactDOM.createRoot(), then pass the React element to root.render():</p>
+              <div>
               <code>
                 const root = ReactDOM.createRoot(
                 document.getElementById('root')
               );
-              const element = <h1>Hello, world</h1>;
+              const element =  h1 Hello, world /h1;
               root.render(element);
             </code>
+              </div>
               <p>It displays “Hello, world” on the page.</p>
       </section>
       <section class="main-section" id="Components">
         <header><h1>Components</h1></header>
         <p>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a detailed component API reference here.
-
           Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
         </p>
         <header>Function and Class Components</header>
         <p>The simplest way to define a component is to write a JavaScript function:</p>
+        <div>
         <code>
           function Welcome(props) {
-          return <h1>Hello, {props.name}</h1>;
+          return h1 Hello, {props.name}/h1;
          }
         </code>
+        </div>
         <p>This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.
         </p>
         <p>You can also use an ES6 class to define a component:</p>
+        <div>
         <code>
           class Welcome extends React.Component {
           render() {
-            return <h1>Hello, {this.props.name}</h1>;
+            return h1 Hello, {this.props.name} /h1;
           }
          }
         </code>
+        </div>
         pThe above two components are equivalent from React’s point of view.
         Function and Class components both have some additional features that we will discuss in the next sections.
       </section>
@@ -158,23 +168,29 @@
           <li>React events are named using camelCase, rather than lowercase.</li>
           <li>With JSX you pass a function as the event handler, rather than a string.</li>
         <p>For example, the HTML:</p>
+        <div>
         <code>
-          <button onclick="activateLasers()">
+          button onclick="activateLasers()"
           Activate Lasers
-        </button>
+        /button
       </code>
+        </div>
       <p>is slightly different in React:</p>
+      <div>
       <code>
-        <button onClick={activateLasers}>
+        button onClick={activateLasers}
         Activate Lasers
-      </button>
+      /button
       </code>
+      </div>
       <header>Passing Arguments to Event Handlers</header>
       <p>Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if id is the row ID, either of the following would work:</p>
+      <div>
       <code>
-        <!-- <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
-        <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button> -->
+        button onClick={(e) => this.deleteRow(id, e)}Delete Row /button
+        button onClick={this.deleteRow.bind(this, id)}>Delete Row /button
       </code>
+      </div>
       <p>The above two lines are equivalent, and use arrow functions and Function.prototype.bind respectively.
         In both cases, the e argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with bind any further arguments are automatically forwarded.
       </p>
@@ -184,48 +200,55 @@
       <p>n React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.</p>
       <p>Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.</p>
       <p>Consider these two components:</p>
+      <div>
       <code>function UserGreeting(props) {
-        return <h1>Welcome back!</h1>;
+        return h1 Welcome back! /h1;
       }
-      
       function GuestGreeting(props) {
-        return <h1>Please sign up.</h1>;
+        return h1 Please sign up. /h1 ;
       }</code>
-      <p>We’ll create a Greeting component that displays either of these components depending on whether a user is logged in:</p>
+      </div>
+      <p>We'll create a Greeting component that displays either of these components depending on whether a user is logged in:</p>
+      <div>
       <code>function Greeting(props) {
         const isLoggedIn = props.isLoggedIn;
         if (isLoggedIn) {
-          return <UserGreeting />;
+          return UserGreeting /;
         }
-        return <GuestGreeting />;
+        return GuestGreeting /;
       }
       
       const root = ReactDOM.createRoot(document.getElementById('root')); 
       // Try changing to isLoggedIn={true}:
-      root.render(<Greeting isLoggedIn={false} />);</code>
+      root.render( Greeting isLoggedIn={false} />);
+    </code>
+      </div>
       <p>This example renders a different greeting depending on the value of isLoggedIn prop.
       </p>
       <header>Element Variables</header>
       <p>You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn’t change.</p>
       <p>Consider these two new components representing Logout and Login buttons:</p>
+      <div>
       <code>
         function LoginButton(props) {
           return (
-            <button onClick={props.onClick}>
+            button onClick={props.onClick}>
               Login
-            </button>
+            /button
           );
         }
         
         function LogoutButton(props) {
           return (
-            <button onClick={props.onClick}>
+            button onClick={props.onClick}>
               Logout
-            </button>
+            /button>
           );
         }
       </code>
+      </div>
     </section>
+  </div>
   </main>
 </body>
 </html>
