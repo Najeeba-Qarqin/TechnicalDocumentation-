@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>React technical document</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main id="main-doc">
     <nav id="navbar">
-      <header>React</header>
+      <header><img src="images/react-logo.png" alt=""></header>
       <li><a class="nav-link" href="#Getting_Started">Getting Started</a></li>
       <li><a class="nav-link" href="#Add_React_to_a_Website">Add React to a Website</a></li>
       <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
@@ -86,14 +87,14 @@
             const root = ReactDOM.createRoot(domContainer);
             root.render(e(LikeButton));
           </code>
-          <p> These three lines of code find the <div> we added to our HTML in the first step, create a React app with it, and then display our “Like” button React component inside of it.</p>
+          <p> These three lines of code find the div we added to our HTML in the first step, create a React app with it, and then display our “Like” button React component inside of it.</p>
       </section>
       <section class="main-section" id="Hello_World">
         <header><h1>Hello World</h1></header>
         <p>The smallest React example looks like this:</p>
         <code>
           const root = ReactDOM.createRoot(document.getElementById('root'));
-          root.render(<h1>Hello, world!</h1>);
+          root.render( h1 Hello, world! h1);
         </code>
         <p>It displays a heading saying “Hello, world!” on the page.</p>
       </section>
