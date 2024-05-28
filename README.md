@@ -62,9 +62,6 @@ Examples:
 
 You can use this project simply by opening it in the browser.
 
-```bash
-# Provide code snippets or commands to demonstrate how to use your project.
-```
 
 ## Features ⭐
 
@@ -75,5 +72,5 @@ You can use this project simply by opening it in the browser.
 
 Provide your name and a link to your Social Media profiles. You can also include your email address.
 
-- LinkedIn: [Your Name](https://linkedin.com/in/your-name)
-- Email: [example](najeebaqarqin@gmail.com)
+- LinkedIn: [Najeeba Qarqin](https://linkedin.com/in/your-name)
+- Email: [Email](najeebaqarqin@gmail.com)
