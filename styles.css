@@ -57,6 +57,7 @@ div {
   padding-right: 60px;
   background-color: #282c34;
   color: white;
+  margin: 0;
 }
 
 section {
@@ -75,4 +76,24 @@ div section > div {
   background-color: black;
   border-radius: 20px;
   padding: 50px;
+  line-height: 25px;
+  margin: 0;
+}
+
+.box1 {
+  background: url(images/img.jpg);
+  background-position: center;
+  background-size: cover;
+  color: rgb(108, 35, 177);
+  font-size: 20px;
+  height: 90vh;
+  width: 50%;
+}
+
+.box1 h1 {
+  border-radius: 90px;
+  margin: 0;
+  width: fit-content;
+  text-align: left;
+  background-color: white ;
 }
